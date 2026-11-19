@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Inventory - Home</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <h1>🛒 Smart Inventory Management System</h1>
+            <ul>
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="products.html">Products</a></li>
+                <li><a href="inventory.html">Inventory</a></li>
+                <li><a href="alerts.html">Alerts</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        <div class="card">
+            <h2>Welcome to Smart Inventory Dashboard</h2>
+
+            <p>
+                A database-driven inventory management system for managing
+                products, inventory batches, and automated stock alerts.
+            </p>
+
+            <p>
+                <strong>Features:</strong>
+                CRUD operations, auto-alerts, responsive design.
+            </p>
+
+            <p>
+                Backend: Java, Spring Boot and database integration.
+                Start by managing products!
+            </p>
+        </div>
+
+        <div class="stats">
+            <div class="stat-card">
+                <h3 id="productCount">0</h3>
+                <p>Total Products</p>
+            </div>
+
+            <div class="stat-card">
+                <h3 id="inventoryCount">0</h3>
+                <p>Total Inventory Items</p>
+            </div>
+
+            <div class="stat-card">
+                <h3 id="alertCount">0</h3>
+                <p>Unresolved Alerts</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Load JavaScript dependencies in order -->
+    <script src="api.js"></script>
+    <script src="main.js"></script>
+
+    <!-- Home Page Initialization -->
+    <script>
+        highlightNav('index');
+        requestNotificationPermission();
+    </script>
+
+</body>
+</html>

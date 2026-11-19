@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products - Smart Inventory</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <h1>🛒 Smart Inventory Management System</h1>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="products.html" class="active">Products</a></li>
+                <li><a href="inventory.html">Inventory</a></li>
+                <li><a href="alerts.html">Alerts</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        <div class="card">
+            <h2>Products Management</h2>
+            <form id="productForm" class="form">
+                <input type="hidden" id="productId" value="">
+                <input type="text" id="productName" placeholder="Product Name (e.g., Apple iPhone 14)" required>
+                <input type="text" id="category" placeholder="Category (e.g., Electronics)" required>
+                <input type="number" id="shelfLifeDays" placeholder="Shelf Life (days)" min="0" required>
+                <button type="submit">Add/Update Product</button>
+                <button type="button" onclick="clearForm()">Clear</button>
+            </form>
+            <table id="productsTable">
+                <thead>
+                    <tr><th>ID</th><th>Name</th><th>Category</th><th>Shelf Life</th><th>Created</th><th>Actions</th></tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="api.js"></script>
+    <script src="main.js"></script>
+    <script src="products.js"></script>
+</body>
+</html>

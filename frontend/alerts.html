@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alerts - Smart Inventory</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <h1>🛒 Smart Inventory Management System</h1>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="products.html">Products</a></li>
+                <li><a href="inventory.html">Inventory</a></li>
+                <li><a href="alerts.html" class="active">Alerts</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        <div class="card">
+            <h2>Unresolved Alerts</h2>
+
+            <p>
+                Real-time notifications for near expiry, out-of-stock, etc.
+                Resolve to mark as handled.
+            </p>
+
+            <table id="alertsTable">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Product ID</th>
+                        <th>Inventory ID</th>
+                        <th>Type</th>
+                        <th>Message</th>
+                        <th>Date</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+
+            <p id="noAlerts" style="text-align: center; display: none;">
+                No unresolved alerts. Good job! 🟢
+            </p>
+        </div>
+    </div>
+
+    <!-- Load dependencies in the correct order -->
+    <script src="api.js"></script>
+    <script src="main.js"></script>
+    <script src="alerts.js"></script>
+
+    <!-- Initialize Alerts Page -->
+    <script>
+        highlightNav('alerts');
+        requestNotificationPermission();
+    </script>
+
+</body>
+</html>

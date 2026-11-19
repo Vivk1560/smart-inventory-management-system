@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inventory - Smart Inventory</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <h1>🛒 Smart Inventory Management System</h1>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="products.html">Products</a></li>
+                <li><a href="inventory.html" class="active">Inventory</a></li>
+                <li><a href="alerts.html">Alerts</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        <div class="card">
+            <h2>Inventory Management</h2>
+
+            <form id="inventoryForm" class="form">
+                <input type="hidden" id="inventoryId" value="">
+
+                <select id="productIdSelect" required>
+                    <option value="">Select Product</option>
+                </select>
+
+                <input type="text" id="batchNo"
+                       placeholder="Batch No (e.g., BATCH001)" required>
+
+                <input type="date" id="manufactureDate" required>
+                <input type="date" id="expiryDate" required>
+
+                <input type="number" id="quantity"
+                       placeholder="Quantity" min="0" required>
+
+                <input type="text" id="warehouseLocation"
+                       placeholder="Warehouse Location (e.g., Warehouse A)"
+                       required>
+
+                <button type="submit">Add/Update Inventory</button>
+                <button type="button" onclick="clearForm()">Clear</button>
+            </form>
+
+            <table id="inventoryTable">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Product ID</th>
+                        <th>Batch</th>
+                        <th>Mfg Date</th>
+                        <th>Expiry</th>
+                        <th>Qty</th>
+                        <th>Location</th>
+                        <th>Last Updated</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Load JavaScript files first -->
+    <script src="api.js"></script>
+    <script src="main.js"></script>
+    <script src="inventory.js"></script>
+
+    <!-- Initialize Inventory Page -->
+    <script>
+        highlightNav('inventory');
+        loadProductsForSelect();
+        loadInventory();
+        requestNotificationPermission();
+    </script>
+
+</body>
+</html>
